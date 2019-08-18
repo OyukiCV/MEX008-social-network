@@ -27,12 +27,13 @@
         <script>
             firebase.auth().onAuthStateChanged(function(user) {
                 if (user) {
-                    document.body.innerHTML = '<h1> Congrats ' + user.displayName +'! </h1>';
+                    document.body.innerHTML = '<h1> Hola ' + user.displayName +'! </h1>';
                 }
                 else {
                     console.log("no user signed in");
                 }
             });
         </script>    
+
     </body>
 </html>

@@ -9,7 +9,7 @@
 .navbar {
     height: 9vh;
     width: 100vw;
-    background: transparent; 
+    background: transparent;
     font-size: 1.5em;
     padding: 1vh 2.5%;
     display: flex;
@@ -30,28 +30,38 @@
     width: 25vh;
 }
 
-/* Login & Register */
+/* Login & Register buttons*/
 .linksToJoin {
     /* border: 1px solid white; */
     text-decoration: none;
     /* padding: .25rem .5rem; */
     padding: 0.5%;
-    font-family: 'Lobster', cursive;
+    font-family: 'Lobster', cursive !important;
     font-size: .8em;
+    background-color:#004d40;
+    padding: 5%;
+    padding-left: 15%;
+    padding-right: 15%;
+    border-radius: 5px;
 }
 
-.linksToJoin:hover {
+/* .linksToJoin:hover {
     text-decoration:underline;
-}
+} */
 
 #btn-login {
     color: white;
 }
 
-/* #btn-register {
-    background: #991b1e;
-    color: #bcbabf;
-} */
+#btn-register {
+    color: white;
+}
+
+h1{
+    color:#004d40;
+    font-family: 'Lobster', cursive;
+    font-size: 3rem;
+}
 
 /* HOME */
 .page-background {
@@ -65,16 +75,18 @@
 
 .main-home {
     padding: 2rem;
-    background: rgba(188, 186, 191, 0.65);
-    color: #991b1e;
+    background: #b2dfdb;
+    color: #4db6ac;
+    text-align: center;
 }
 
-.main-home h1 {
-    font-family: 'Ma Shan Zheng', cursive;
+.main-home  {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #26a69a;
 }
 
 .main-home p {
-    font-family: 'Kalam', cursive;
+    font-family: 'Lobster', cursive !important;
 }
 #main-home-mbl {
     width: 60vw;
@@ -83,6 +95,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background-color: rgba(	178, 223, 219, 0.85);
     /* text-align: center; */
 }
 
@@ -90,6 +103,13 @@
     display: none;
 }
 
+.txt-home{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #26a69a;
+
+}
+
+/* FORM */
 .form-background{
     width: 60vw;
     height: 60vh;
@@ -110,6 +130,7 @@
     height: 5vh;
     font-family: 'Kalam', cursive;
     font-size: .8rem;
+
 }
 
 #addon-wrapping { 
@@ -121,21 +142,131 @@
     height: 5vh;
     font-family: 'Kalam', cursive;
     font-size: 1.2rem;
+    color:white;
+    background-color:#004d40;
+}
+
+/* inicio publicaciones*/
+
+
+i{
+    margin: 1rem;
+    justify-content: space-between;
+}
+
+i .fas, .fa-user-circle, .fa-heart, .fa-shopping-cart, .fa-user-friends, .fa-search, .fa-comment{
+   color: #4db6ac;
+}
+ 
+.row{
+     margin-bottom: 0 !important;
+}
+
+.menu{
+     display: flex;
+     text-align: center;
+     align-items: center;
+     justify-content: space-around; 
+     z-index: 10;
+}
+
+ul{
+    margin:0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+}
+
+ul li ul{
+    display: none;
+    float: left;
+    position: relative;
+}
+
+li:hover ul{
+    display: block;
+    position: absolute;
+    background-color: white;
+    width: auto;
+}
+
+.cerrar{
+    margin: 0.5rem 0 0.5rem 0;
+    padding: 0.5rem;
+    font-size: 1rem;
+    z-index: 15;
+}
+ 
+.container-post{
+    background-color:  #b2dfdb;
+    display: grid;
+    z-index: 1;
+}
+
+.title{
+    display: flex;
+    text-align: left;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card-head{
+    background-color: inherit;
+    border-top: 1px solid rgba(160,160,160,0.2);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    position: relative;
+}
+
+.card-footer {
+    background-color: inherit;
+    border-top: 1px solid rgba(160,160,160,0.2);
+    position: relative;
+}
+
+.btn{
+    margin-bottom: 1rem;
+}
+
+.btn-post {
+    padding: 0.5%;
+    font-family: 'Lobster', cursive !important;
+    font-size: 1em;
+    background-color: #004d40;
+    color: white;
+    padding: 4%;
+    padding-left: 10%;
+    padding-right: 10%;
+    border-radius: 5px;
+    margin-bottom: 4%;
 }
 
 /* desktop version */
 @media (min-width: 600px){
+    /* Login & Register buttons*/
+    .linksToJoin {
+        /* border: 1px solid white; */
+        text-decoration: none;
+        /* padding: .25rem .5rem; */
+        padding: 0.5%;
+        font-family: 'Lobster', cursive !important;
+        font-size: .8em;
+        background-color: transparent;
+    }
+
     /* NAVBAR */
-    #navbar-dsk {
+
+    #navbar-dsk  {
         display: flex;
     }
+
 
     #navbar-mbl{
         display: none;
     }
 
     /* HOME */
-
     #home {
         display: grid;
         grid-template-columns: 50% 50%;
@@ -155,6 +286,7 @@
     }
 
     #main-home-dsk h1 {
+        padding-top: 15%;
         font-size: 2.6rem;
     }
 
@@ -172,6 +304,8 @@
     }
 }
 
+    /*inicio publicaciones*/
+
 
 @media (max-width: 768px){
     
@@ -185,8 +319,7 @@
         .size-li{
             width: 30vh !important;
             text-align: center !important;
-        }
-        
+        }    
 
 }
 
@@ -201,6 +334,7 @@
     .size-li{
         width: 30vh !important;
         text-align: center !important;
+        text-decoration: none;
     }
     
 }
