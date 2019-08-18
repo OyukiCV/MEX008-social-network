@@ -1,9 +1,10 @@
 let Register = {
     render : async () => {
         let view = /*html*/ `
-            <figure class = "page-background">
+            <figure class = "page-background"> 
                 <section class = "form-background">
                     <h1>Crea tu cuenta</h1>
+                   
                     <form id = "form-register" name = "formRegister">
                         <input 
                             type="email"
