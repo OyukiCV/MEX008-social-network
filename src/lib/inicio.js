@@ -17,26 +17,62 @@ let Inicio = {
 
 <div class="container-post">
 
-    
+    <!--cuadro para publicacion -->
+
     <div class="row">
         <div class="col s12 m7">
             <div class="card">
                 <div class="card-head title"> <i class="fas fa-user-circle fa-3x"></i>
-                    <p>Proveedor</p>
+                    <p>Usuario N</p>
                 </div>
                 <div class="card-image">
                     
                 </div>
                 <div class="card-content">
-                    <textarea id="publiIntrodu" name="textarea" rows="40" cols="110">Escribe tu publicación</textarea>
+                    <textarea id="nombre" name="textarea" rows="40" cols="110">¿Que está pasando?</textarea>
+          
                 </div>
                 <div class="menu card-footer">
-                    <button class="btn-post">Publicar</button>
-                    
+                 
+                    <button class=" btn btn-info btn-save" id="boton">Guardar</button>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- publicacion guardada/impresa -->
+
+
+     <div class="row">
+        <div class="col s12 m7">
+            <div class="card">
+                <div class="card-head title"> <i class="fas fa-user-circle fa-3x"></i>
+                    <p>Usuario N</p>
+                </div>
+                <div class="card-image">
+                    
+                </div>
+                <div class="card-content">
+                    
+        <table class="table my-3">
+            <thead>
+           
+            </thead>
+            <tbody id="tabla">
+            </tbody>
+        </table>
+          
+                </div>
+                <div class="menu card-footer">
+                 
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- publicacion-maqueta -->
+
     <div class="row">
         <div class="col s12 m7">
             <div class="card">
@@ -57,20 +93,6 @@ let Inicio = {
     </div>
 </div>
 
- <div class="container">
-        <input type="text" placeholder="¿Que está pasando?" id="nombre" class="form-control my-3">
-        <button class="btn btn-info btn-save" id="boton">Guardar</button>
-        <button class="btn btn-info" id="editar">Editar</button>
-        <table class="table my-3">
-            <thead>
-            <tr>
-                <th scope="col">Tus publicaciones</th>
-            </tr>
-            </thead>
-            <tbody id="tabla">
-            </tbody>
-        </table>
-       </div>
 `
 
         return view

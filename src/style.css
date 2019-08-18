@@ -225,6 +225,10 @@ li:hover ul{
     position: relative;
 }
 
+.btn{
+    margin-bottom: 1rem;
+}
+
 .btn-post {
     padding: 0.5%;
     font-family: 'Lobster', cursive !important;
