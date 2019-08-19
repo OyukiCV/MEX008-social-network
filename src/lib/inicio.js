@@ -33,8 +33,8 @@ let Inicio = {
           
                 </div>
                 <div class="menu card-footer">
-                 
-                    <button class=" btn btn-info btn-save" id="boton">Guardar</button>
+               
+                    <button class=" btn btn-info btn-save" >Publicar</button>
                 </div>
             </div>
         </div>
@@ -42,34 +42,13 @@ let Inicio = {
 
     <!-- publicacion guardada/impresa -->
 
-
-     <div class="row">
-        <div class="col s12 m7">
-            <div class="card">
-                <div class="card-head title"> <i class="fas fa-user-circle fa-3x"></i>
-                    <p>Usuario N</p>
-                </div>
-                <div class="card-image">
-                    
-                </div>
-                <div class="card-content">
-                    
-        <table class="table my-3">
-            <thead>
-           
-            </thead>
-            <tbody id="tabla">
-            </tbody>
-        </table>
-          
-                </div>
-                <div class="menu card-footer">
-                 
-                   
-                </div>
-            </div>
-        </div>
-    </div>
+    <table class="table my-3">
+    <thead>
+    </thead>
+    <tbody id="tabla">
+    </tbody>
+</table>  
+    
 
 <!-- publicacion-maqueta -->
 
@@ -85,7 +64,8 @@ let Inicio = {
                 <div class="card-content">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis, massa vitae rhoncus sollicitudin, et fringilla arcu nisi vitae orci.</p>
                 </div>
-                <div class="menu card-footer"> <i class="fas fa-heart fa-2x"></i>
+                <div class="menu card-footer"> 
+                    <i class="fas fa-heart fa-2x"></i>
                     <i class="fas fa-comment fa-2x"></i>
                 </div>
             </div>
@@ -103,6 +83,8 @@ let Inicio = {
   const db = firebase.firestore();
   //-------------------------------------------------------------------
   const btnSavePost = document.getElementsByClassName("btn-save")[0];
+  const btnEliminar = document.getElementsByClassName("btn-danger");
+  
   
   // **************** GUARDANDO ELEMENTOS EN FIRESTORE *****************
   
@@ -134,11 +116,36 @@ let Inicio = {
     querySnapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data().first}`);
         tabla.innerHTML  += `
-                <tr>
-                  <td class="my-3">${doc.data().first}</td>
-                  <td class="my-6"><button class="btn btn-danger" onclick="eliminar('${doc.id}')" id="btnEliminar">Eliminar</button></td>
-                  <td class="my-6"><button class="btn btn-warning" onclick="editar('${doc.id}', '${doc.data().first}')">Editar</button></td>
-                </tr>
+               
+             <div class="row">
+                <div class="col s12 m7">
+                    <div class="card">
+                        <div class="card-head title"> <i class="fas fa-user-circle fa-3x"></i>
+                            <p>Usuario N</p>
+                        </div>
+                        <div class="card-image">
+                            
+                        </div>
+        
+                        <div class="tabla card-content">
+        
+               
+                            <p class = "my-3">${doc.data().first}</p>
+                        </div>
+        
+                        <div class="my-6 menu card-footer">
+                            <button class="btn btn-danger" onclick="eliminar('${doc.id}')" id="btnEliminar">Eliminar</button>
+                            <button class="btn btn-warning" onclick="editar('${doc.id}', '${doc.data().first}')">Editar</button></td>
+                            
+                        </div>
+                        
+                        <div class="my-6 menu card-footer">
+                             <i class="fas fa-heart fa-2x"></i>
+                             <i class="fas fa-comment fa-2x"></i>   
+                        </div>
+                    </div>
+                </div>
+            </div>
         `
     });
   });
